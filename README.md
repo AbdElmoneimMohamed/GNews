@@ -29,16 +29,9 @@ make code-quality
 
 ## 🏗️ Architecture
 
-```
 src/
 ├── Domain/              # Pure business logic (no framework dependencies)
 ├── Application/         # Use cases & orchestration
 └── Infrastructure/      # Framework implementations (Symfony, Doctrine, HTTP)
-```
 
-## 🛠️ Common Commands
-
-### Synchronization
-```bash
-make sync ARGS="--keyword=AI --language=en --max=20"
-```
+## please check the postman collection
