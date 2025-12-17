@@ -1,0 +1,11 @@
+parameters:
+    level: 8
+    paths:
+        - src
+        - tests
+    excludePaths:
+        - src/Kernel.php
+    tmpDir: var/cache/phpstan
+    ignoreErrors:
+        - '#Property App\\News\\Infrastructure\\Persistence\\Doctrine\\Entity\\NewsArticleEntity::\$id \(int\|null\) is never assigned int#'
+

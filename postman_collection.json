@@ -1,0 +1,218 @@
+{
+  "info": {
+    "name": "News Aggregation Service API",
+    "description": "API endpoints for News Aggregation Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Ingest Articles",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"keyword\": \"technology\",\n  \"language\": \"en\",\n  \"max\": 10\n}"
+        },
+        "url": {
+          "raw": "http://localhost/api/news/ingest",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["api", "news", "ingest"]
+        },
+        "description": "Fetch articles from GNews API and store them locally"
+      }
+    },
+    {
+      "name": "Ingest with Date Range",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"keyword\": \"artificial intelligence\",\n  \"language\": \"en\",\n  \"from\": \"2024-12-01T00:00:00Z\",\n  \"to\": \"2024-12-16T23:59:59Z\",\n  \"max\": 20\n}"
+        },
+        "url": {
+          "raw": "http://localhost/api/news/ingest",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["api", "news", "ingest"]
+        },
+        "description": "Ingest articles with date range filter"
+      }
+    },
+    {
+      "name": "Get All Articles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost/api/news?page=1&limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["api", "news"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Get paginated list of all articles"
+      }
+    },
+    {
+      "name": "Search Articles by Keyword",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost/api/news?keyword=technology&page=1&limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["api", "news"],
+          "query": [
+            {
+              "key": "keyword",
+              "value": "technology"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Search articles by keyword in title, description, or content"
+      }
+    },
+    {
+      "name": "Filter by Date Range",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost/api/news?from=2024-12-01&to=2024-12-16&page=1&limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["api", "news"],
+          "query": [
+            {
+              "key": "from",
+              "value": "2024-12-01"
+            },
+            {
+              "key": "to",
+              "value": "2024-12-16"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Filter articles by date range"
+      }
+    },
+    {
+      "name": "Filter by Source",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost/api/news?source=TechCrunch&page=1&limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["api", "news"],
+          "query": [
+            {
+              "key": "source",
+              "value": "TechCrunch"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Filter articles by source name"
+      }
+    },
+    {
+      "name": "Combined Filters",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost/api/news?keyword=AI&from=2024-12-01&to=2024-12-16&page=1&limit=5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["api", "news"],
+          "query": [
+            {
+              "key": "keyword",
+              "value": "AI"
+            },
+            {
+              "key": "from",
+              "value": "2024-12-01"
+            },
+            {
+              "key": "to",
+              "value": "2024-12-16"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        },
+        "description": "Use multiple filters together"
+      }
+    },
+    {
+      "name": "Get Article by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost/api/news/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "path": ["api", "news", "1"]
+        },
+        "description": "Get a single article by its ID"
+      }
+    }
+  ]
+}
+

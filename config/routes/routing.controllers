@@ -1,0 +1,6 @@
+# config/routes/routing.controllers
+# Load routes from controller annotations/attributes
+src_controller:
+    resource: ../../src/News/Infrastructure/Http/Controller/
+    type: attribute
+
